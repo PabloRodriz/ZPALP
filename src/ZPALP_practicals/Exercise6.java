@@ -13,6 +13,7 @@ package ZPALP_practicals;
 public class Exercise6 {
     public static void main(String[] args) {
         int[][] nums = new int[4][4];
+        int[][] aux = new int[4][4];
        
         nums[0][0] = 1;
         nums[0][1] = 2;
@@ -35,6 +36,16 @@ public class Exercise6 {
         nums[3][3] = 16;
         
         printArray(nums);
+        
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums[i].length; j++) {
+                aux[i][j] = nums[j][i];
+            }
+        }
+        System.out.println("");
+        System.out.println("");
+        printArray(aux);
+        
     }
 
     
