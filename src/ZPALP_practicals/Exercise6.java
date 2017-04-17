@@ -13,7 +13,7 @@ package ZPALP_practicals;
 public class Exercise6 {
     public static void main(String[] args) {
         int[][] nums = new int[4][4];
-
+       
         nums[0][0] = 1;
         nums[0][1] = 2;
         nums[0][2] = 3;
@@ -41,7 +41,7 @@ public class Exercise6 {
     public static void printArray(int[][] arrayToString) {
         for (int i = 0; i < arrayToString.length; i++) {
             for (int j = 0; j < arrayToString[i].length; j++) {
-                System.out.print(arrayToString[i][j]);
+                System.out.print(arrayToString[i][j] + " ");
             }
             System.out.println();
         }
