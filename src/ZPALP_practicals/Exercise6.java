@@ -5,6 +5,8 @@
  */
 package ZPALP_practicals;
 
+import java.util.Scanner;
+
 /** 
  * @author Pablo
  * 
@@ -12,8 +14,29 @@ package ZPALP_practicals;
  */
 public class Exercise6 {
     public static void main(String[] args) {
+        // <10, 50)
+        int number = (int)Math.round(Math.random() * 39 + 10);
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Size of matrix: ");
+        int size = scan.nextInt();
+        
+        int[][] matrix = new int[size][size];
+        
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrix[i][j] = (int)Math.round(Math.random() * 39 + 10);
+            }
+        }
+        
+        printArray(matrix);
+        System.out.println("");
+        printArray(swapDiagonal(matrix, size));
+        System.out.println("");
+        printArray(zeros(matrix));
+        
+        
         int[][] nums = new int[4][4];
-        int[][] aux = new int[4][4];
+        
        
         nums[0][0] = 1;
         nums[0][1] = 2;
@@ -35,16 +58,12 @@ public class Exercise6 {
         nums[3][2] = 15;
         nums[3][3] = 16;
         
-        printArray(nums);
+        //printArray(nums);
         
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 0; j < nums[i].length; j++) {
-                aux[i][j] = nums[j][i];
-            }
-        }
+        
         System.out.println("");
         System.out.println("");
-        printArray(aux);
+        //printArray(aux);
         
     }
 
@@ -57,6 +76,29 @@ public class Exercise6 {
             System.out.println();
         }
         
+    }
+    
+    public static int [][]  swapDiagonal(int [][] array, int size){
+        int[][] aux = new int[size][size];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                aux[i][j] = array[j][i];
+            }
+        }
+        return aux;
+    }
+    
+    public static int [][]  zeros(int [][] array){
+        
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if(i>j){
+                  array[i][j] = 0; 
+                }
+                
+            }
+        }
+        return array;
     }
     
     
